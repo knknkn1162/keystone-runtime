@@ -12,7 +12,7 @@ SRCS = aes.c sha256.c boot.c interrupt.c printf.c syscall.c string.c linux_wrap.
 ASM_SRCS = entry.S
 RUNTIME = eyrie-rt
 LINK = $(CROSS_COMPILE)ld
-LDFLAGS = -static -nostdlib $(shell $(CC) --print-file-name=libgcc.a)
+LDFLAGS = -static -nostdlib $(shell $(CC) --print-file-name=libgcc.a) $(EXTRA_LDFLAGS)
 
 SDK_LIB_DIR = $(KEYSTONE_SDK_DIR)/lib
 SDK_INCLUDE_EDGE_DIR = $(KEYSTONE_SDK_DIR)/include/edge
